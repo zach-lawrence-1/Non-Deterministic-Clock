@@ -7,12 +7,9 @@ A real time clock displayed in the terminal in a fancy way. Uses random text gen
 ### Downloading The Code
 Download the code and make file as follows
 Git:
-1. ```git clone --no-checkout https://github.com/zach-lawrence-1/C_plus_plus_projects.git c```
+1. ```git clone https://github.com/zach-lawrence-1/Non-Deterministic-Clock.git c```
    - c can be any local directory you want.
-3. ```cd c```
-4. ```git sparse-checkout set --no-cone```
-5. ```git checkout master```
-6. ```git sparse-checkout set Clocks```
+2. ```cd c```
 
 OR
 
@@ -22,7 +19,7 @@ On windows, as long as you have MSYS2 setup with g++ and you can run make files 
 1. Download code and make file.
 2. Open a terminal in the same directory as the code and make file.
 3. Type in ```make ND```
-4. run ```./ND.exe```
+4. run ```./ND.exe``` or ```./ND```
 ### Linux
 As long as you have g++ and make installed and running on your linux box, you should be able to run the main program as follows:
 1. Open a terminal in the same directory as the code and make file or just navigate there via cd commands.
