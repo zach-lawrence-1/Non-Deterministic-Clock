@@ -27,6 +27,16 @@ As long as you have g++ and make installed and running on your linux box, you sh
 3. run ```./ND```
 
 You can also run ```make ct```, ```make random```, ```make shapes``` and execute the associated executable/elf files to run the individual pieces I broke the problem into if you want.
+
+## Time Complexity Analysis
+```string RandomBlockGenerator()``` **O(1)**  
+Since the size of our random string is fixed. If the random string was a block of size n * m, then it would be **O(n*m)**
+
+```void ExtractCurrentTime(int clockDigits[8])``` **O(1)**  
+
+``void PrintClock(unsigned long int clock[11], int clockDigits[8], std::string &textBlock)``` **O(n)**  
+Since insert function has **O(n)** time complexity and arrays/strings are fixed size. If we have a random string of size n * m, and our clock digits had a width of k then our time complexity would be **O(m*k + m*n)**. This is because we would loop through the height of the string m, and use insert function m times as well loop through k extracted bits in that height loop.
+
 ## Updates
 1. Got idea/inspired and wrote random text generator which generates a fixed size block of random characters, then wrote a basic clock using ctime.
 2. Implemented a basic idea of how I want to display the clock text and color scheme.
