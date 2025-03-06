@@ -34,7 +34,7 @@ Since the size of our random string is fixed. If the random string was a block o
 
 ```void ExtractCurrentTime(int clockDigits[8])``` **O(1)**  
 
-``void PrintClock(unsigned long int clock[11], int clockDigits[8], std::string &textBlock)``` **O(n)**  
+```void PrintClock(unsigned long int clock[11], int clockDigits[8], std::string &textBlock)``` **O(n)**  
 Since insert function has **O(n)** time complexity and arrays/strings are fixed size. If we have a random string of size n * m, and our clock digits had a width of k then our time complexity would be **O(m*k + m*n)**. This is because we would loop through the height of the string m, and use insert function m times as well loop through k extracted bits in that height loop.
 
 ## Updates
