@@ -64,11 +64,15 @@ void PrintClock(unsigned long int clock[11], int clockDigits[8], std::string &te
         for (int j = 0; j < 8; j++)
         {
             bool color = 0;
-            unsigned long int temp = (clock[clockDigits[j]] >> 5 * (y - 1)) & 31;
 
+            //extract rightmost 5 bits from the current code number
+            unsigned long int extractedBits = (clock[clockDigits[j]] >> (5 * (y - 1))) & 31;
+
+            //go through extracted bits to determine coloring
             for (int k = 0; k < 5; k++)
             {
-                bool currBit = (temp << k) & 16;
+                bool currBit = (extractedBits << k) & 16;
+                
                 if (currBit == 1 && color == 0)
                 {
                     textBlock.insert(strIndex, "\033[1;43;33m");
@@ -87,6 +91,7 @@ void PrintClock(unsigned long int clock[11], int clockDigits[8], std::string &te
                 }
             }
 
+            //return text color to background color
             textBlock.insert(strIndex, "\033[0m\033[38;5;244m");
             strIndex += 17;
         }
@@ -99,7 +104,7 @@ void PrintClock(unsigned long int clock[11], int clockDigits[8], std::string &te
 
 int main()
 {
-    //these numbers represent each digit/char possible in the clock including :
+    //these code numbers represent each digit/char possible in the clock including ':'
     unsigned long int clock[11] = {33080895, 32641676, 15862318, 32545855,
                                    4357780, 32570911, 33095199, 1082431, 
                                    33095231, 32570943, 131200
